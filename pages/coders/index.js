@@ -1,10 +1,11 @@
-import Link from 'next/link';
 import styles from '../../styles/Jobs.module.css'
+import Link from 'next/link';
 
 export const getStaticProps = async () => {
 
   const response = await fetch('https://api.github.com/users');
   const data = await response.json();
+  console.log(data)
 
   return {
     props: { coders: data }
